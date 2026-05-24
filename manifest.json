@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "Alerta de Arrependimento",
+  "version": "1.0.0",
+  "description": "Previne compras impulsivas com alertas inteligentes de reflexão antes de finalizar pedidos online.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "scripting",
+    "notifications",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+    }
+  }
+  
+
